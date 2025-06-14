@@ -12,3 +12,8 @@ output "asg_name" {
 output "alb_access_log_bucket" {
   value = aws_s3_bucket.access_logs.bucket
 }
+
+# Public Endpoint flag
+output "public_endpoint" {
+  value = var.use_public_endpoint
+}

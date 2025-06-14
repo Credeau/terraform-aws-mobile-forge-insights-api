@@ -125,6 +125,7 @@ No modules.
 | <a name="input_timezone"></a> [timezone](#input\_timezone) | timezone to use for scheduled scaling | `string` | `"Asia/Kolkata"` | no |
 | <a name="input_upscale_evaluation_period"></a> [upscale\_evaluation\_period](#input\_upscale\_evaluation\_period) | Number of seconds required to observe the system before triggering upscale | `number` | `60` | no |
 | <a name="input_upscale_schedule"></a> [upscale\_schedule](#input\_upscale\_schedule) | upscale schedule | `string` | `"0 8 * * MON-SUN"` | no |
+| <a name="input_use_public_endpoint"></a> [use\_public\_endpoint](#input\_use\_public\_endpoint) | use public endpoint | `bool` | `true` | no |
 | <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id) | vpc id | `string` | n/a | yes |
 | <a name="input_waf_rate_limit"></a> [waf\_rate\_limit](#input\_waf\_rate\_limit) | number of requests to allow from same IP in 1 min span on LB | `number` | `100` | no |
 
@@ -135,4 +136,5 @@ No modules.
 | <a name="output_alb_access_log_bucket"></a> [alb\_access\_log\_bucket](#output\_alb\_access\_log\_bucket) | ALB Access Log Bucket |
 | <a name="output_asg_name"></a> [asg\_name](#output\_asg\_name) | Auto Scaling Group Name |
 | <a name="output_lb_dns_name"></a> [lb\_dns\_name](#output\_lb\_dns\_name) | Load Balancer DNS Name |
+| <a name="output_public_endpoint"></a> [public\_endpoint](#output\_public\_endpoint) | Public Endpoint flag |
 <!-- END_TF_DOCS -->

@@ -265,6 +265,12 @@ variable "allowed_ips" {
   default     = []
 }
 
+variable "use_public_endpoint" {
+  type        = bool
+  description = "use public endpoint"
+  default     = true
+}
+
 # -----------------------------------------------
 # External Dependencies Variables
 # -----------------------------------------------

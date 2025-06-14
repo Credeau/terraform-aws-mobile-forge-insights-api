@@ -1,4 +1,6 @@
 resource "aws_wafv2_ip_set" "main" {
+  count = var.use_public_endpoint ? 1 : 0
+
   name               = format("%s-waf-allowed-ips", local.stack_identifier)
   description        = "Allowed IPs for Device-Insights API"
   scope              = "REGIONAL"
