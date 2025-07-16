@@ -401,3 +401,123 @@ variable "sms_extractor_batch_size" {
   description = "sms extractor batch size"
   default     = 1000
 }
+
+variable "apps_mapping_path" {
+  type        = string
+  description = "S3 path to apps mapping config"
+}
+
+variable "avg_device_mapping_path" {
+  type        = string
+  description = "S3 path to avg device mapping config"
+}
+
+variable "device_mapping_path" {
+  type        = string
+  description = "S3 path to device mapping config"
+}
+
+variable "merchant_mapping_path" {
+  type        = string
+  description = "S3 path to merchant mapping config"
+}
+
+variable "sms_mapping_path" {
+  type        = string
+  description = "S3 path to sms mapping config"
+}
+
+variable "company_model_path" {
+  type        = string
+  description = "S3 path to company model config"
+}
+
+variable "company_vectorizer_path" {
+  type        = string
+  description = "S3 path to company vectorizer config"
+}
+
+variable "count_vectorizer_path" {
+  type        = string
+  description = "S3 path to count vectorizer config"
+}
+
+variable "label_model_path" {
+  type        = string
+  description = "S3 path to label model config"
+}
+
+variable "lr_model_path" {
+  type        = string
+  description = "S3 path to lr model config"
+}
+
+variable "merchant_label_v2_path" {
+  type        = string
+  description = "S3 path to merchant label v2 config"
+}
+
+variable "merchant_label_path" {
+  type        = string
+  description = "S3 path to merchant label config"
+}
+
+variable "merchant_model_v2_path" {
+  type        = string
+  description = "S3 path to merchant model v2 config"
+}
+
+variable "merchant_model_path" {
+  type        = string
+  description = "S3 path to merchant model config"
+}
+
+variable "merchant_vectorizer_v2_path" {
+  type        = string
+  description = "S3 path to merchant vectorizer v2 config"
+}
+
+variable "merchant_vectorizer_path" {
+  type        = string
+  description = "S3 path to merchant vectorizer config"
+}
+
+variable "lgb_score_model_path" {
+  type        = string
+  description = "S3 path to lgb score model config"
+}
+
+variable "payday_score_lgb_model_path" {
+  type        = string
+  description = "S3 path to payday score lgb model config"
+}
+
+variable "payday_score_lgb_model_v2_path" {
+  type        = string
+  description = "S3 path to payday score lgb model v2 config"
+}
+
+variable "payday_score_lgb_model_v3_path" {
+  type        = string
+  description = "S3 path to payday score lgb model v3 config"
+}
+
+variable "predictors_score_lgb_model_path" {
+  type        = string
+  description = "S3 path to predictors score lgb model config"
+}
+
+variable "predictors_payday_score_lgb_model_path" {
+  type        = string
+  description = "S3 path to predictors payday score lgb model config"
+}
+
+variable "predictors_payday_score_lgb_model_v2_path" {
+  type        = string
+  description = "S3 path to predictors payday score lgb model v2 config"
+}
+
+variable "predictors_payday_score_lgb_model_v3_path" {
+  type        = string
+  description = "S3 path to predictors payday score lgb model v3 config"
+}
