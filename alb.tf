@@ -40,7 +40,7 @@ resource "aws_lb_listener" "http" {
 resource "aws_lb_listener_rule" "http_rule_1" {
   count = !var.use_public_endpoint ? 1 : 0
 
-  listener_arn = aws_lb_listener.http.arn
+  listener_arn = aws_lb_listener.http[0].arn
   priority     = 1
 
   action {
@@ -58,7 +58,7 @@ resource "aws_lb_listener_rule" "http_rule_1" {
 resource "aws_lb_listener_rule" "http_rule_2" {
   count = !var.use_public_endpoint ? 1 : 0
 
-  listener_arn = aws_lb_listener.http.arn
+  listener_arn = aws_lb_listener.http[0].arn
   priority     = 1
 
   action {
@@ -95,7 +95,7 @@ resource "aws_lb_listener" "https" {
 resource "aws_lb_listener_rule" "https_rule_1" {
   count = var.use_public_endpoint ? 1 : 0
 
-  listener_arn = aws_lb_listener.https.arn
+  listener_arn = aws_lb_listener.https[0].arn
   priority     = 1
 
   action {
@@ -113,8 +113,8 @@ resource "aws_lb_listener_rule" "https_rule_1" {
 resource "aws_lb_listener_rule" "https_rule_2" {
   count = var.use_public_endpoint ? 1 : 0
 
-  listener_arn = aws_lb_listener.https.arn
-  priority     = 1
+  listener_arn = aws_lb_listener.https[0].arn
+  priority     = 2
 
   action {
     type             = "forward"
