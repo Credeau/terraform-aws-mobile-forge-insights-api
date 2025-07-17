@@ -47,6 +47,7 @@ resource "aws_launch_template" "main" {
     {
       region                                    = var.region
       registry                                  = local.ecr_registry
+      environment                               = var.environment
       ecr_repository                            = var.ecr_repository
       image_tag                                 = var.ecr_image_tag
       application                               = var.application
@@ -71,6 +72,8 @@ resource "aws_launch_template" "main" {
       mongo_socket_timeout_ms                   = var.mongo_socket_timeout_ms
       mongo_retry_writes                        = var.mongo_retry_writes
       mongo_wait_queue_timeout_ms               = var.mongo_wait_queue_timeout_ms
+      sms_extractor_host                        = var.sms_extractor_host
+      sms_extractor_batch_size                  = var.sms_extractor_batch_size
       log_group                                 = aws_cloudwatch_log_group.main.name
       apps_mapping_path                         = var.apps_mapping_path
       avg_device_mapping_path                   = var.avg_device_mapping_path
