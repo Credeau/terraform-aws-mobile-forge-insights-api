@@ -345,7 +345,7 @@ variable "mongo_db" {
 variable "mongo_enabled_sources" {
   type        = string
   description = "mongo enabled sources"
-  default     = ["*"]
+  default     = "*"
 }
 
 variable "mongo_max_pool_size" {
