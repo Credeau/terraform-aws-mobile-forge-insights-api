@@ -59,7 +59,7 @@ resource "aws_lb_listener_rule" "http_rule_2" {
   count = !var.use_public_endpoint ? 1 : 0
 
   listener_arn = aws_lb_listener.http[0].arn
-  priority     = 1
+  priority     = 2
 
   action {
     type             = "forward"
