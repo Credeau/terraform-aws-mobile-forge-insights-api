@@ -427,6 +427,11 @@ variable "sms_mapping_path" {
   description = "S3 path to sms mapping config"
 }
 
+variable "sms_mapping_v2_path" {
+  type        = string
+  description = "S3 path to sms mapping v2 config"
+}
+
 variable "company_model_path" {
   type        = string
   description = "S3 path to company model config"

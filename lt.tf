@@ -80,6 +80,7 @@ resource "aws_launch_template" "main" {
       device_mapping_path                       = var.device_mapping_path
       merchant_mapping_path                     = var.merchant_mapping_path
       sms_mapping_path                          = var.sms_mapping_path
+      sms_mapping_v2_path                       = var.sms_mapping_v2_path
       company_model_path                        = var.company_model_path
       company_vectorizer_path                   = var.company_vectorizer_path
       count_vectorizer_path                     = var.count_vectorizer_path

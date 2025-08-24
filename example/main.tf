@@ -19,7 +19,7 @@ data "aws_ssm_parameter" "postgres_password" {
 }
 
 module "device_insights" {
-  source = "git::https://github.com/credeau/terraform-aws-mobile-forge-insights-api.git?ref=v1.0.0"
+  source = "git::https://github.com/credeau/terraform-aws-mobile-forge-insights-api.git?ref=v1.0.2"
 
   application             = "di-insights"
   environment             = "prod"
@@ -86,6 +86,7 @@ module "device_insights" {
   device_mapping_path                       = "s3://bucket_name/configs/india_configs_device_pricing.json.enc"
   merchant_mapping_path                     = "s3://bucket_name/configs/india_configs_merchant_clean_sender_name_mapping.csv.enc"
   sms_mapping_path                          = "s3://bucket_name/configs/india_configs_sms_sender_mapping.json.enc"
+  sms_mapping_v2_path                       = "s3://bucket_name/configs/india_configs_sms_sender_mapping_v2.json.enc"
   company_model_path                        = "s3://bucket_name/models/india_models_company_model.pkl.enc"
   company_vectorizer_path                   = "s3://bucket_name/models/india_models_company_vectorizer.pkl.enc"
   count_vectorizer_path                     = "s3://bucket_name/models/india_models_countvectorizer.pickle.enc"
