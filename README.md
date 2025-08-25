@@ -85,6 +85,7 @@ No modules.
 | <a name="input_downscale_schedule"></a> [downscale\_schedule](#input\_downscale\_schedule) | downscale schedule | `string` | `"0 21 * * MON-SUN"` | no |
 | <a name="input_ecr_image_tag"></a> [ecr\_image\_tag](#input\_ecr\_image\_tag) | aws sync ecr repository image tag | `string` | `"latest"` | no |
 | <a name="input_ecr_repository"></a> [ecr\_repository](#input\_ecr\_repository) | aws sync ecr repository | `string` | `"device-insights-insights-api"` | no |
+| <a name="input_emi_score_lgb_model_v2_path"></a> [emi\_score\_lgb\_model\_v2\_path](#input\_emi\_score\_lgb\_model\_v2\_path) | S3 path to emi score lgb model v2 config | `string` | n/a | yes |
 | <a name="input_enable_alb_access_logs"></a> [enable\_alb\_access\_logs](#input\_enable\_alb\_access\_logs) | enable alb access logs | `bool` | `false` | no |
 | <a name="input_enable_scheduled_scaling"></a> [enable\_scheduled\_scaling](#input\_enable\_scheduled\_scaling) | enable scheduled scaling | `bool` | `false` | no |
 | <a name="input_environment"></a> [environment](#input\_environment) | environment type | `string` | `"dev"` | no |
@@ -128,6 +129,7 @@ No modules.
 | <a name="input_postgres_port"></a> [postgres\_port](#input\_postgres\_port) | postgres port | `number` | `5432` | no |
 | <a name="input_postgres_sync_db"></a> [postgres\_sync\_db](#input\_postgres\_sync\_db) | postgres sync database | `string` | `null` | no |
 | <a name="input_postgres_user_name"></a> [postgres\_user\_name](#input\_postgres\_user\_name) | postgres user name | `string` | `null` | no |
+| <a name="input_predictors_emi_score_lgb_model_v2_path"></a> [predictors\_emi\_score\_lgb\_model\_v2\_path](#input\_predictors\_emi\_score\_lgb\_model\_v2\_path) | S3 path to predictors emi score lgb model v2 config | `string` | n/a | yes |
 | <a name="input_predictors_payday_score_lgb_model_path"></a> [predictors\_payday\_score\_lgb\_model\_path](#input\_predictors\_payday\_score\_lgb\_model\_path) | S3 path to predictors payday score lgb model config | `string` | n/a | yes |
 | <a name="input_predictors_payday_score_lgb_model_v2_path"></a> [predictors\_payday\_score\_lgb\_model\_v2\_path](#input\_predictors\_payday\_score\_lgb\_model\_v2\_path) | S3 path to predictors payday score lgb model v2 config | `string` | n/a | yes |
 | <a name="input_predictors_payday_score_lgb_model_v3_path"></a> [predictors\_payday\_score\_lgb\_model\_v3\_path](#input\_predictors\_payday\_score\_lgb\_model\_v3\_path) | S3 path to predictors payday score lgb model v3 config | `string` | n/a | yes |

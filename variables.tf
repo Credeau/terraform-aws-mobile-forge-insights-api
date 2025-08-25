@@ -531,3 +531,13 @@ variable "predictors_payday_score_lgb_model_v3_path" {
   type        = string
   description = "S3 path to predictors payday score lgb model v3 config"
 }
+
+variable "emi_score_lgb_model_v2_path" {
+  type        = string
+  description = "S3 path to emi score lgb model v2 config"
+}
+
+variable "predictors_emi_score_lgb_model_v2_path" {
+  type        = string
+  description = "S3 path to predictors emi score lgb model v2 config"
+}

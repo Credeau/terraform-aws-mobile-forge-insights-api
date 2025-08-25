@@ -19,7 +19,7 @@ data "aws_ssm_parameter" "postgres_password" {
 }
 
 module "device_insights" {
-  source = "git::https://github.com/credeau/terraform-aws-mobile-forge-insights-api.git?ref=v1.0.3"
+  source = "git::https://github.com/credeau/terraform-aws-mobile-forge-insights-api.git?ref=v1.0.4"
 
   application             = "di-insights"
   environment             = "prod"
@@ -107,6 +107,8 @@ module "device_insights" {
   predictors_payday_score_lgb_model_path    = "s3://bucket_name/scoring/india_scoring_predictors_payday_lgb_model.pkl.enc"
   predictors_payday_score_lgb_model_v2_path = "s3://bucket_name/scoring/india_scoring_predictors_payday_lgb_model_20250623.pkl.enc"
   predictors_payday_score_lgb_model_v3_path = "s3://bucket_name/scoring/india_scoring_predictors_payday_lgb_model_20250703.pkl.enc"
+  emi_score_lgb_model_v2_path               = "s3://bucket_name/scoring/india_scoring_emi_lgb_model_20250730.pkl.enc"
+  predictors_emi_score_lgb_model_v2_path    = "s3://bucket_name/scoring/india_scoring_predictors_emi_lgb_model_20250730.pkl.enc"
 }
 
 output "device_insights" {

@@ -56,6 +56,8 @@ docker run -d \
     -e PREDICTORS_PAYDAY_SCORE_LGB_MODEL_PATH="${predictors_payday_score_lgb_model_path}" \
     -e PREDICTORS_PAYDAY_SCORE_LGB_MODEL_V2_PATH="${predictors_payday_score_lgb_model_v2_path}" \
     -e PREDICTORS_PAYDAY_SCORE_LGB_MODEL_V3_PATH="${predictors_payday_score_lgb_model_v3_path}" \
+    -e EMI_LGB_MODEL_V2_PATH="${emi_score_lgb_model_v2_path}" \
+    -e PREDICTORS_EMI_LGB_MODEL_V2_PATH="${predictors_emi_score_lgb_model_v2_path}" \
     --restart always \
     --log-driver=awslogs \
     --log-opt awslogs-region="${region}" \
