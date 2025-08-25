@@ -89,6 +89,7 @@ No modules.
 | <a name="input_enable_scheduled_scaling"></a> [enable\_scheduled\_scaling](#input\_enable\_scheduled\_scaling) | enable scheduled scaling | `bool` | `false` | no |
 | <a name="input_environment"></a> [environment](#input\_environment) | environment type | `string` | `"dev"` | no |
 | <a name="input_external_security_groups"></a> [external\_security\_groups](#input\_external\_security\_groups) | list of external access security group ids | `list(string)` | `[]` | no |
+| <a name="input_fraud_apps_mapping_path"></a> [fraud\_apps\_mapping\_path](#input\_fraud\_apps\_mapping\_path) | S3 path to fraud apps mapping config | `string` | n/a | yes |
 | <a name="input_instance_type"></a> [instance\_type](#input\_instance\_type) | Instances type to provision in ASG for insights api | `string` | `"t2.micro"` | no |
 | <a name="input_internal_security_groups"></a> [internal\_security\_groups](#input\_internal\_security\_groups) | list of internal access security group ids | `list(string)` | `[]` | no |
 | <a name="input_key_name"></a> [key\_name](#input\_key\_name) | ssh access key name | `string` | n/a | yes |
@@ -144,6 +145,7 @@ No modules.
 | <a name="input_sms_extractor_batch_size"></a> [sms\_extractor\_batch\_size](#input\_sms\_extractor\_batch\_size) | sms extractor batch size | `number` | `1000` | no |
 | <a name="input_sms_extractor_host"></a> [sms\_extractor\_host](#input\_sms\_extractor\_host) | sms extractor host | `string` | `null` | no |
 | <a name="input_sms_mapping_path"></a> [sms\_mapping\_path](#input\_sms\_mapping\_path) | S3 path to sms mapping config | `string` | n/a | yes |
+| <a name="input_sms_mapping_v2_path"></a> [sms\_mapping\_v2\_path](#input\_sms\_mapping\_v2\_path) | S3 path to sms mapping v2 config | `string` | n/a | yes |
 | <a name="input_stack_owner"></a> [stack\_owner](#input\_stack\_owner) | owner of the stack | `string` | `"tech@credeau.com"` | no |
 | <a name="input_stack_team"></a> [stack\_team](#input\_stack\_team) | team of the stack | `string` | `"devops"` | no |
 | <a name="input_timezone"></a> [timezone](#input\_timezone) | timezone to use for scheduled scaling | `string` | `"Asia/Kolkata"` | no |
