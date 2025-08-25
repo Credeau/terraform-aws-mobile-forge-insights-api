@@ -76,6 +76,7 @@ resource "aws_launch_template" "main" {
       sms_extractor_batch_size                  = var.sms_extractor_batch_size
       log_group                                 = aws_cloudwatch_log_group.main.name
       apps_mapping_path                         = var.apps_mapping_path
+      fraud_apps_mapping_path                   = var.fraud_apps_mapping_path
       avg_device_mapping_path                   = var.avg_device_mapping_path
       device_mapping_path                       = var.device_mapping_path
       merchant_mapping_path                     = var.merchant_mapping_path

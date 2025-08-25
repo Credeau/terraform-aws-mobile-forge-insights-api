@@ -19,7 +19,7 @@ data "aws_ssm_parameter" "postgres_password" {
 }
 
 module "device_insights" {
-  source = "git::https://github.com/credeau/terraform-aws-mobile-forge-insights-api.git?ref=v1.0.2"
+  source = "git::https://github.com/credeau/terraform-aws-mobile-forge-insights-api.git?ref=v1.0.3"
 
   application             = "di-insights"
   environment             = "prod"
@@ -82,6 +82,7 @@ module "device_insights" {
   sms_extractor_batch_size = "1000"
 
   apps_mapping_path                         = "s3://bucket_name/configs/india_configs_apps_mapping.json.enc"
+  fraud_apps_mapping_path                   = "s3://bucket_name/configs/india_configs_fraud_apps_mapping.json.enc"
   avg_device_mapping_path                   = "s3://bucket_name/configs/india_configs_avg_device_price.json.enc"
   device_mapping_path                       = "s3://bucket_name/configs/india_configs_device_pricing.json.enc"
   merchant_mapping_path                     = "s3://bucket_name/configs/india_configs_merchant_clean_sender_name_mapping.csv.enc"
