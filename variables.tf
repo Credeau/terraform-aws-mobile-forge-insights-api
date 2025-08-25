@@ -407,6 +407,11 @@ variable "apps_mapping_path" {
   description = "S3 path to apps mapping config"
 }
 
+variable "fraud_apps_mapping_path" {
+  type        = string
+  description = "S3 path to fraud apps mapping config"
+}
+
 variable "avg_device_mapping_path" {
   type        = string
   description = "S3 path to avg device mapping config"
