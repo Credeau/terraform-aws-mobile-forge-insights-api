@@ -186,34 +186,28 @@ variable "timezone" {
   default     = "Asia/Kolkata"
 }
 
-variable "upscale_schedule" {
-  type        = string
-  description = "upscale schedule"
-  default     = "0 8 * * MON-SUN"
-}
-
-variable "scheduled_upscale_min_size" {
-  type        = number
-  description = "minimum number of instances to keep in asg for scheduled upscale"
-  default     = 5
-}
-
-variable "scheduled_upscale_max_size" {
-  type        = number
-  description = "maximum number of instances to keep in asg for scheduled upscale"
-  default     = 10
-}
-
-variable "scheduled_upscale_desired_size" {
-  type        = number
-  description = "desired number of instances to keep in asg for scheduled upscale"
-  default     = 5
-}
-
-variable "downscale_schedule" {
-  type        = string
-  description = "downscale schedule"
-  default     = "0 21 * * MON-SUN"
+variable "scaling_schedules" {
+  type = list(object({
+    cron_expression  = string
+    min_size         = number
+    max_size         = number
+    desired_capacity = number
+  }))
+  description = "scaling schedules"
+  default = [
+    {
+      cron_expression  = "0 8 * * MON-SUN"
+      min_size         = 5
+      max_size         = 10
+      desired_capacity = 5
+    },
+    {
+      cron_expression  = "0 21 * * MON-SUN"
+      min_size         = 2
+      max_size         = 10
+      desired_capacity = 2
+    }
+  ]
 }
 
 variable "enable_alb_access_logs" {

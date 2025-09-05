@@ -51,28 +51,17 @@ resource "aws_autoscaling_group" "main" {
   }
 }
 
-resource "aws_autoscaling_schedule" "scheduled_upscale" {
-  count = var.enable_scheduled_scaling ? 1 : 0
+resource "aws_autoscaling_schedule" "scheduled_scaling" {
+  count = var.enable_scheduled_scaling ? length(var.scaling_schedules) : 0
 
-  scheduled_action_name  = format("%s-scheduled-upscale-action", local.stack_identifier)
-  min_size               = var.scheduled_upscale_min_size
-  max_size               = var.scheduled_upscale_max_size
-  desired_capacity       = var.scheduled_upscale_desired_size
+  scheduled_action_name  = format("%s-scheduled-scaling-action-%s", local.stack_identifier, count.index)
   autoscaling_group_name = aws_autoscaling_group.main.name
-  time_zone              = var.timezone
-  recurrence             = var.upscale_schedule
-}
 
-resource "aws_autoscaling_schedule" "scheduled_downscale" {
-  count = var.enable_scheduled_scaling ? 1 : 0
-
-  scheduled_action_name  = format("%s-scheduled-downscale-action", local.stack_identifier)
-  min_size               = var.asg_min_size
-  max_size               = var.asg_max_size
-  desired_capacity       = var.asg_desired_size
-  autoscaling_group_name = aws_autoscaling_group.main.name
-  time_zone              = var.timezone
-  recurrence             = var.downscale_schedule
+  min_size         = var.scaling_schedules[count.index].min_size
+  max_size         = var.scaling_schedules[count.index].max_size
+  desired_capacity = var.scaling_schedules[count.index].desired_capacity
+  time_zone        = "Asia/Kolkata"
+  recurrence       = var.scaling_schedules[count.index].cron_expression
 }
 
 resource "aws_autoscaling_policy" "upscale" {
