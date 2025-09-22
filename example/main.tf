@@ -19,7 +19,7 @@ data "aws_ssm_parameter" "postgres_password" {
 }
 
 module "device_insights" {
-  source = "git::https://github.com/credeau/terraform-aws-mobile-forge-insights-api.git?ref=v1.0.4"
+  source = "git::https://github.com/credeau/terraform-aws-mobile-forge-insights-api.git?ref=v1.1.0"
 
   application             = "di-insights"
   environment             = "prod"
