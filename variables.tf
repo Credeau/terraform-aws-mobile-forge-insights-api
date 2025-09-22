@@ -222,6 +222,20 @@ variable "enable_alb_access_logs" {
   default     = false
 }
 
+variable "log_metric_filters" {
+  type = list(object({
+    name           = string
+    filter_pattern = string
+  }))
+  description = "list of log metric filters"
+  default = [
+    {
+      name           = "log_errors"
+      filter_pattern = "ERROR"
+    }
+  ]
+}
+
 # -----------------------------------------------
 # Network & Security Variables
 # -----------------------------------------------

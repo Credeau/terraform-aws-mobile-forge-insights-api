@@ -9,6 +9,7 @@ locals {
 
   ecr_registry     = format("%s.dkr.ecr.%s.amazonaws.com", data.aws_caller_identity.current.account_id, var.region)
   stack_identifier = format("%s-%s", var.application, var.environment)
+  metric_namespace = local.stack_identifier
 
   allowed_api_paths_1 = [
     "/api/fetch_data",
