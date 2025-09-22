@@ -58,6 +58,8 @@ docker run -d \
     -e PREDICTORS_PAYDAY_SCORE_LGB_MODEL_V3_PATH="${predictors_payday_score_lgb_model_v3_path}" \
     -e EMI_LGB_MODEL_V2_PATH="${emi_score_lgb_model_v2_path}" \
     -e PREDICTORS_EMI_LGB_MODEL_V2_PATH="${predictors_emi_score_lgb_model_v2_path}" \
+    -e FAST_FEATURIZATION_WEBHOOK="${fast_featurization_webhook}" \
+    -e CACHE_EXPIRATION_MINUTES="${cache_expiration_minutes}" \
     --restart always \
     --log-driver=awslogs \
     --log-opt awslogs-region="${region}" \

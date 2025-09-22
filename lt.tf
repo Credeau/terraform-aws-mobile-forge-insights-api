@@ -103,6 +103,8 @@ resource "aws_launch_template" "main" {
       predictors_payday_score_lgb_model_v3_path = var.predictors_payday_score_lgb_model_v3_path
       emi_score_lgb_model_v2_path               = var.emi_score_lgb_model_v2_path
       predictors_emi_score_lgb_model_v2_path    = var.predictors_emi_score_lgb_model_v2_path
+      fast_featurization_webhook                = var.fast_featurization_webhook
+      cache_expiration_minutes                  = var.cache_expiration_minutes
     }
   ))
 
