@@ -26,12 +26,14 @@ No modules.
 | [aws_autoscaling_schedule.scheduled_upscale](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/autoscaling_schedule) | resource |
 | [aws_cloudwatch_log_group.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_log_group) | resource |
 | [aws_cloudwatch_log_group.waf](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_log_group) | resource |
+| [aws_cloudwatch_log_metric_filter.errors](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_log_metric_filter) | resource |
 | [aws_cloudwatch_metric_alarm.asg_cpu_downscale](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_metric_alarm) | resource |
 | [aws_cloudwatch_metric_alarm.asg_cpu_upscale](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_metric_alarm) | resource |
 | [aws_cloudwatch_metric_alarm.asg_disk](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_metric_alarm) | resource |
 | [aws_cloudwatch_metric_alarm.asg_memory_downscale](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_metric_alarm) | resource |
 | [aws_cloudwatch_metric_alarm.asg_memory_upscale](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_metric_alarm) | resource |
 | [aws_cloudwatch_metric_alarm.load_balancer_5XX](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_metric_alarm) | resource |
+| [aws_cloudwatch_metric_alarm.log_errors](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_metric_alarm) | resource |
 | [aws_cloudwatch_metric_alarm.target_group_4XX](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_metric_alarm) | resource |
 | [aws_cloudwatch_metric_alarm.target_group_5XX](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_metric_alarm) | resource |
 | [aws_cloudwatch_metric_alarm.target_group_unhealthy_nodes](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_metric_alarm) | resource |
@@ -45,10 +47,6 @@ No modules.
 | [aws_lb.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb) | resource |
 | [aws_lb_listener.http](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb_listener) | resource |
 | [aws_lb_listener.https](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb_listener) | resource |
-| [aws_lb_listener_rule.http_rule_1](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb_listener_rule) | resource |
-| [aws_lb_listener_rule.http_rule_2](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb_listener_rule) | resource |
-| [aws_lb_listener_rule.https_rule_1](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb_listener_rule) | resource |
-| [aws_lb_listener_rule.https_rule_2](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb_listener_rule) | resource |
 | [aws_lb_target_group.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb_target_group) | resource |
 | [aws_placement_group.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/placement_group) | resource |
 | [aws_s3_bucket.access_logs](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket) | resource |
@@ -76,6 +74,7 @@ No modules.
 | <a name="input_asg_max_size"></a> [asg\_max\_size](#input\_asg\_max\_size) | maximum number of instances to keep in asg for insights api | `number` | `2` | no |
 | <a name="input_asg_min_size"></a> [asg\_min\_size](#input\_asg\_min\_size) | minimum number of instances to keep in asg for insights api | `number` | `1` | no |
 | <a name="input_avg_device_mapping_path"></a> [avg\_device\_mapping\_path](#input\_avg\_device\_mapping\_path) | S3 path to avg device mapping config | `string` | n/a | yes |
+| <a name="input_cache_expiration_minutes"></a> [cache\_expiration\_minutes](#input\_cache\_expiration\_minutes) | cache expiration minutes | `number` | `60` | no |
 | <a name="input_certificate_domain_name"></a> [certificate\_domain\_name](#input\_certificate\_domain\_name) | domain name of the acm certificate for https | `string` | `"*.credeau.com"` | no |
 | <a name="input_company_model_path"></a> [company\_model\_path](#input\_company\_model\_path) | S3 path to company model config | `string` | n/a | yes |
 | <a name="input_company_vectorizer_path"></a> [company\_vectorizer\_path](#input\_company\_vectorizer\_path) | S3 path to company vectorizer config | `string` | n/a | yes |
@@ -90,12 +89,14 @@ No modules.
 | <a name="input_enable_scheduled_scaling"></a> [enable\_scheduled\_scaling](#input\_enable\_scheduled\_scaling) | enable scheduled scaling | `bool` | `false` | no |
 | <a name="input_environment"></a> [environment](#input\_environment) | environment type | `string` | `"dev"` | no |
 | <a name="input_external_security_groups"></a> [external\_security\_groups](#input\_external\_security\_groups) | list of external access security group ids | `list(string)` | `[]` | no |
+| <a name="input_fast_featurization_webhook"></a> [fast\_featurization\_webhook](#input\_fast\_featurization\_webhook) | webhook url for fast featurization | `string` | `null` | no |
 | <a name="input_fraud_apps_mapping_path"></a> [fraud\_apps\_mapping\_path](#input\_fraud\_apps\_mapping\_path) | S3 path to fraud apps mapping config | `string` | n/a | yes |
 | <a name="input_instance_type"></a> [instance\_type](#input\_instance\_type) | Instances type to provision in ASG for insights api | `string` | `"t2.micro"` | no |
 | <a name="input_internal_security_groups"></a> [internal\_security\_groups](#input\_internal\_security\_groups) | list of internal access security group ids | `list(string)` | `[]` | no |
 | <a name="input_key_name"></a> [key\_name](#input\_key\_name) | ssh access key name | `string` | n/a | yes |
 | <a name="input_label_model_path"></a> [label\_model\_path](#input\_label\_model\_path) | S3 path to label model config | `string` | n/a | yes |
 | <a name="input_lgb_score_model_path"></a> [lgb\_score\_model\_path](#input\_lgb\_score\_model\_path) | S3 path to lgb score model config | `string` | n/a | yes |
+| <a name="input_log_metric_filters"></a> [log\_metric\_filters](#input\_log\_metric\_filters) | list of log metric filters | <pre>list(object({<br>    name           = string<br>    filter_pattern = string<br>  }))</pre> | <pre>[<br>  {<br>    "filter_pattern": "ERROR",<br>    "name": "log_errors"<br>  }<br>]</pre> | no |
 | <a name="input_logs_retention_period"></a> [logs\_retention\_period](#input\_logs\_retention\_period) | No of days to retain the logs | `number` | `7` | no |
 | <a name="input_lr_model_path"></a> [lr\_model\_path](#input\_lr\_model\_path) | S3 path to lr model config | `string` | n/a | yes |
 | <a name="input_mapped_port"></a> [mapped\_port](#input\_mapped\_port) | mapped port to expose the application | `number` | `8000` | no |

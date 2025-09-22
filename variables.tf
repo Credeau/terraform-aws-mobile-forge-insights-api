@@ -555,3 +555,15 @@ variable "predictors_emi_score_lgb_model_v2_path" {
   type        = string
   description = "S3 path to predictors emi score lgb model v2 config"
 }
+
+variable "fast_featurization_webhook" {
+  type        = string
+  description = "webhook url for fast featurization"
+  default     = null
+}
+
+variable "cache_expiration_minutes" {
+  type        = number
+  description = "cache expiration minutes"
+  default     = 60
+}
