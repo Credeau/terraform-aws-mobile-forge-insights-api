@@ -109,6 +109,9 @@ module "device_insights" {
   predictors_payday_score_lgb_model_v3_path = "s3://bucket_name/scoring/india_scoring_predictors_payday_lgb_model_20250703.pkl.enc"
   emi_score_lgb_model_v2_path               = "s3://bucket_name/scoring/india_scoring_emi_lgb_model_20250730.pkl.enc"
   predictors_emi_score_lgb_model_v2_path    = "s3://bucket_name/scoring/india_scoring_predictors_emi_lgb_model_20250730.pkl.enc"
+
+  fast_featurization_webhook = "https://webhook.site/123e4567-e89b-12d3-a456-426614174000"
+  cache_expiration_minutes   = 60
 }
 
 output "device_insights" {
